@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(npm install apify-client)",
+      "Bash(npm run build:*)",
+      "WebFetch(domain:rapidapi.com)",
+      "WebFetch(domain:datafetcher.com)",
+      "WebFetch(domain:rss.app)",
+      "Bash(npm uninstall:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
