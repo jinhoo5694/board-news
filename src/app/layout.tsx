@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "보드게임 뉴스",
+  title: "미플랩 보드게임 뉴스",
   description: "한국 보드게임 커뮤니티의 최신 소식을 모아보세요",
 };
 

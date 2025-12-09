@@ -13,6 +13,7 @@ export default function Home() {
   const [isScraping, setIsScraping] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
+  const [showCopied, setShowCopied] = useState(false);
 
   const fetchPosts = useCallback(async () => {
     try {
@@ -57,6 +58,12 @@ export default function Home() {
     }
   };
 
+  const handleCopyEmail = async () => {
+    await navigator.clipboard.writeText("haein_0923@naver.com");
+    setShowCopied(true);
+    setTimeout(() => setShowCopied(false), 2000);
+  };
+
   const filteredPosts = selectedChannel
     ? posts.filter((p) => p.username.toLowerCase() === selectedChannel.toLowerCase())
     : posts;
@@ -73,7 +80,7 @@ export default function Home() {
               </div>
               <div>
                 <h1 className="text-xl font-bold bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
-                  보드게임 뉴스
+                  미플랩 보드게임 뉴스
                 </h1>
                 <p className="text-xs text-gray-500">
                   한국 보드게임 커뮤니티 소식
@@ -81,6 +88,20 @@ export default function Home() {
               </div>
             </div>
             <div className="flex items-center gap-3">
+              <button
+                onClick={handleCopyEmail}
+                className="relative flex items-center gap-2 rounded-full border border-purple-200 bg-white px-4 py-2.5 text-sm font-medium text-violet-600 transition-all hover:bg-purple-50 hover:border-purple-300"
+              >
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span className="hidden sm:inline">문의하기</span>
+                {showCopied && (
+                  <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-gray-800 px-2 py-1 text-xs text-white">
+                    이메일 주소가 클립보드에 복사되었습니다
+                  </span>
+                )}
+              </button>
               {lastUpdated && (
                 <span className="hidden text-xs text-gray-400 sm:block">
                   {lastUpdated.toLocaleTimeString("ko-KR", { hour: "2-digit", minute: "2-digit" })} 업데이트
