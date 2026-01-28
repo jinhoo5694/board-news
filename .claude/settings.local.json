@@ -7,7 +7,20 @@
       "WebFetch(domain:rapidapi.com)",
       "WebFetch(domain:datafetcher.com)",
       "WebFetch(domain:rss.app)",
-      "Bash(npm uninstall:*)"
+      "Bash(npm uninstall:*)",
+      "WebFetch(domain:rsshub.app)",
+      "WebFetch(domain:rsshub.rssforever.com)",
+      "WebFetch(domain:hub.slarker.me)",
+      "WebFetch(domain:docs.rsshub.app)",
+      "Bash(curl:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(docker:*)",
+      "WebFetch(domain:rss-bridge-production-f4c8.up.railway.app)",
+      "WebFetch(domain:rss-bridge.github.io)",
+      "WebFetch(domain:rss-bridge.org)",
+      "WebFetch(domain:picuki.com)",
+      "WebFetch(domain:imginn.com)",
+      "WebFetch(domain:apify.com)"
     ],
     "deny": [],
     "ask": []

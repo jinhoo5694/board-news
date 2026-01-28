@@ -79,7 +79,7 @@ export default function Home() {
                 🎲
               </div>
               <div>
-                <h1 className="text-xl font-bold bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
+                <h1 className="text-xl font-bold whitespace-nowrap bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
                   미플랩 보드게임 뉴스
                 </h1>
                 <p className="text-xs text-gray-500">
@@ -87,10 +87,10 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               <button
                 onClick={handleCopyEmail}
-                className="relative flex items-center gap-2 rounded-full border border-purple-200 bg-white px-4 py-2.5 text-sm font-medium text-violet-600 transition-all hover:bg-purple-50 hover:border-purple-300"
+                className="relative flex items-center gap-2 rounded-full border border-purple-200 bg-white px-3 py-2 sm:px-4 sm:py-2.5 text-sm font-medium text-violet-600 transition-all hover:bg-purple-50 hover:border-purple-300"
               >
                 <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -110,7 +110,7 @@ export default function Home() {
               <button
                 onClick={handleScrape}
                 disabled={isScraping}
-                className="flex items-center gap-2 rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 px-5 py-2.5 text-sm font-medium text-white shadow-md transition-all hover:shadow-lg hover:scale-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:scale-100"
+                className="flex items-center gap-2 whitespace-nowrap rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 px-3 py-2 sm:px-5 sm:py-2.5 text-sm font-medium text-white shadow-md transition-all hover:shadow-lg hover:scale-105 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:scale-100"
               >
                 {isScraping ? (
                   <>
@@ -118,14 +118,14 @@ export default function Home() {
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                     </svg>
-                    수집 중...
+                    <span className="hidden sm:inline">수집 중...</span>
                   </>
                 ) : (
                   <>
                     <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                     </svg>
-                    새로고침
+                    <span className="hidden sm:inline">새로고침</span>
                   </>
                 )}
               </button>
